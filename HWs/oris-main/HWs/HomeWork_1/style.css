@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Afacad;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.weather {
+    position: absolute;
+    text-align: right;
+    top: 35px;
+    right: 35px;
+    opacity: 1;
+}
+
+.weather .temperature {
+    opacity: 1;
+    
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #212121;
+}
+
+.weather .city {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #6E6CDF
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 1715.9420166015625;
+    height: 397.68115234375;
+    top: 359.96px;
+    left: 6px;
+    gap: 55.65px;
+}
+
+.main .greeting {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 1715.9420166015625;
+    height: 156.27536010742188;
+    gap: 20px;
+    opacity: 1;
+}
+
+.main .greeting .time {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 74px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.main .greeting .good {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color:  #6E6CDF;
+}
+
+.main .active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 621.4492797851562;
+    height: 185.7536163330078;
+    gap: 55.65px;
+}
+
+.main .active .searchbar {
+    display: flex;
+    align-items: center;
+    height: 65.10144805908203;
+    width: 621.4492797851562;
+    border-radius: 18.55px;
+    border-width: 1.16px;
+    padding-top: 18.55px;
+    padding-right: 27.83px;
+    padding-bottom: 18.55px;
+    padding-left: 27.83px;
+    background: #FAFAFA;
+    border: 1.16px solid #EEEEEE
+}
+
+.main .active .searchbar .loopa {
+    width: 28;
+    height: 28;
+    opacity: 1;
+    
+}
+
+.main .active .searchbar .search_txt {
+    font-family: 'Poppins';
+    margin-left: 9px;;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.23px;
+    color: #9E9E9E;
+}
+
+.main .active .tools {
+    width: 621.95654296875;
+    height: 65;
+    gap: 27.83px;
+    opacity: 1;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65;
+    height: 65;
+    border-radius: 18.57px;
+    border-width: 1.16px;
+    color: #FAFAFA;
+    border: 1.16px solid #EEEEEE;
+}
+
+@media (max-width: 700px) {
+    .desktop {
+        display: none;
+    }
+
+    .searchbar {
+        max-width: 80vw;
+    }
+
+    .tools {
+        max-width: 80vw;
+    }
+
+}
+    
+
