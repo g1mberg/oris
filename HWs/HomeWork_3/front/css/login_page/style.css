@@ -1,24 +1,239 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #a0c4ff, #cdb4db);
+  background: linear-gradient(135deg, #b0c4de, #dda0dd);
+  height: 100vh;
+  overflow: hidden;
 }
 
 .container {
-    display: flex;
-    width: 900px;
-    background-color: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  position: relative;
+  width: 1200px;
+  height: 700px;
+  background: #fff;
+  border-radius: 40px;
+  margin: 50px auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
+.back {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 550px;
+  height: 100%;
+  background: #d9ecf8;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  overflow: hidden;
+}
+
+.back .character {
+  position: absolute;
+  height: 703px;
+  width: 778px;
+  bottom: 0;
+  left: -100px;
+}
+
+.back .cactus {
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  width: 130px;
+}
+
+.content {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  width: 400px;
+}
+
+.logo p {
+  font-size: 22px;
+  color: #e48ab0;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.text1 p:first-child {
+  font-size: 16px;
+  color: #444;
+}
+
+.text1 p:last-child {
+  font-size: 48px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 35px;
+}
+
+.email, .password {
+  margin-bottom: 25px;
+}
+
+.email label,
+.password label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Стили для "Forgot Password?" — делаем как раньше */
+.password .text2 {
+  display: flex;
+  position: relative;
+}
+
+.password .text2 .forgot-password {
+  position: absolute;
+  right: 0;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.password .text2 .forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Обёртки полей — как раньше */
+.rect3, .rect2 {
+  height: 40px;
+  background: #d1e3f0;
+  border-radius: 6px;
+  padding: 10px 15px;
+  position: relative;
+}
+
+/* Стили для настоящих input — без границ, с прозрачным фоном */
+.rect3 input,
+.rect2 input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.rect3 input::placeholder,
+.rect2 input::placeholder {
+  color: #333;
+  opacity: 0.7;
+}
+
+/* Иконка глаза */
+.password .eye {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  width: 18px;
+  opacity: 0.7;
+  pointer-events: none; /* чтобы не мешала клику в поле */
+}
+
+/* Кнопка */
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.rect1 {
+  width: 150px;
+  height: 45px;
+  background: #e48ab0;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+
+.rect1:hover {
+  background: #d06c98;
+}
+
+.rect1 span {
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  right: 25px;
+  top: 14px;
+  width: 16px;
+}
+
+/* Соцсети */
+.social {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-between;
+  width: 332px;
+  height: 118px;
+  margin: 20px auto 0;
+}
+
+.social p {
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+}
+
+.social p:first-child {
+  color: #6096B4;
+}
+
+.rects {
+  display: flex;
+  list-style: none;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.rects li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #6096B4;
+  border-radius: 25px;
+  width: 104px;
+  height: 42px;
+  margin: 0 5px;
+}
+
+.rects img {
+  width: 18px;
+  height: 18px;
+}
+
+.sign_up {
+  color: #e48ab0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Убираем стандартные стили кнопки в форме */
+button {
+  font-family: "Poppins", Arial, sans-serif;
+}

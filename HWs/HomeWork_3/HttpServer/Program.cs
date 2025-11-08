@@ -9,7 +9,7 @@ public class Program
     {
         try
         {
-            var httpServer = new HttpServer();
+            var httpServer = new HttpServerApp.HttpServer();
             httpServer.Start();
             while (await Task.Run(() => Console.ReadLine() != "/stop")) ;
             httpServer.Stop();
