@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1cMcmKXRLQQ=",
+  "dgSpecHash": "LD16UjPhu9o=",
   "success": true,
-  "projectFilePath": "C:\\kfu\\oris\\HW\\oris\\lol\\MiniHttpServer\\MiniHttpServer.csproj",
+  "projectFilePath": "C:\\kfu\\oris\\HW\\oris\\HWs\\HW4(maybe)\\MiniHttpServer\\MiniHttpServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\муха\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512"
   ],

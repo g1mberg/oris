@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\kfu\\oris\\HW\\oris\\lol\\MiniHttpServer\\MiniHttpServer.csproj": {}
+    "C:\\kfu\\oris\\HW\\oris\\HWs\\HW4(maybe)\\MiniHttpServer\\MiniHttpServer.csproj": {}
   },
   "projects": {
-    "C:\\kfu\\oris\\HW\\oris\\lol\\MiniHttpServer\\MiniHttpServer.csproj": {
+    "C:\\kfu\\oris\\HW\\oris\\HWs\\HW4(maybe)\\MiniHttpServer\\MiniHttpServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\kfu\\oris\\HW\\oris\\lol\\MiniHttpServer\\MiniHttpServer.csproj",
+        "projectUniqueName": "C:\\kfu\\oris\\HW\\oris\\HWs\\HW4(maybe)\\MiniHttpServer\\MiniHttpServer.csproj",
         "projectName": "MiniHttpServer",
-        "projectPath": "C:\\kfu\\oris\\HW\\oris\\lol\\MiniHttpServer\\MiniHttpServer.csproj",
+        "projectPath": "C:\\kfu\\oris\\HW\\oris\\HWs\\HW4(maybe)\\MiniHttpServer\\MiniHttpServer.csproj",
         "packagesPath": "C:\\Users\\муха\\.nuget\\packages\\",
-        "outputPath": "C:\\kfu\\oris\\HW\\oris\\lol\\MiniHttpServer\\obj\\",
+        "outputPath": "C:\\kfu\\oris\\HW\\oris\\HWs\\HW4(maybe)\\MiniHttpServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

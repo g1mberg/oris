@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("MiniHttpServer")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("MigrationLibrary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09dfd09978ef516ebbc30d84c0dc89d9c7871113")]
-[assembly: System.Reflection.AssemblyProductAttribute("MiniHttpServer")]
-[assembly: System.Reflection.AssemblyTitleAttribute("MiniHttpServer")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("MigrationLibrary")]
+[assembly: System.Reflection.AssemblyTitleAttribute("MigrationLibrary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
