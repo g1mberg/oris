@@ -1,0 +1,98 @@
+﻿.info {
+    display: flex;
+    padding: 40px 20px;
+    background-color: #004c99;
+    border-top: 5px solid #f6be00;
+    color: #fff;
+    font-family: "Libre Franklin", Helvetica, sans-serif;
+    justify-content: center;
+}
+
+.info .content {
+    max-width: 1480px;
+}
+
+.info .info-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info .left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 250px;
+}
+
+.info .left .choose-city {
+    background-color: #027ac7;
+    padding: 16px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.info .left .choose-city::after {
+    content: "\25BC";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.info .left .socials,
+.info .left .markets {
+    display: flex;
+    gap: 15px;
+}
+
+.info .left .socials div,
+.info .left .markets div {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.info .left .defender {
+    width: 140px;
+    height: 50px;
+    background-image: url('./img/este-site-protegido-por-site-defender.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.info .right {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    flex: 1;
+}
+
+.info .right div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info .bottom {
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+@media (max-width: 900px) {
+    .info .right {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .info .right {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/mainpage/css/head/blue_nav.css" />
+    <link rel="stylesheet" href="/mainpage/css/head/blue_nav.css" />
+    <link rel="stylesheet" href="/mainpage/css/head/bot_nav.css" />
+    <link rel="stylesheet" href="/mainpage/css/head/mid_nav.css" />
+    <link rel="stylesheet" href="/mainpage/css/head/nav.css" />
+    <link rel="stylesheet" href="/mainpage/css/main/card.css" />
+    <link rel="stylesheet" href="/mainpage/css/main/excursions.css" />
+    <link rel="stylesheet" href="/mainpage/css/style.css" />
+    <link rel="stylesheet" href="/mainpage/css/main/filterbar.css" />
+    <link rel="stylesheet" href="/mainpage/css/offers.css" />
+    <link rel="stylesheet" href="/mainpage/css/bottom/info.css" />
+    <link rel="stylesheet" href="/mainpage/css/bottom/commercials.css" />
+</head>
+
+<body>
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" data-close="loginModal">&times;</span>
+            <h3>Вход</h3>
+            <input type="text" id="loginUsername" placeholder="Логин">
+            <input type="password" id="loginPassword" placeholder="Пароль">
+            <button id="loginSubmit">Войти</button>
+
+            <p>Нет аккаунта? <button id="toRegister">Зарегистрироваться</button></p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" data-close="registerModal">&times;</span>
+            <h3>Регистрация</h3>
+            <input type="text" id="regUsername" placeholder="Логин">
+            <input type="password" id="regPassword" placeholder="Пароль">
+            <button id="registerSubmit">Создать аккаунт</button>
+
+            <p>Уже есть аккаунт? <button id="toLogin">Войти</button></p>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="container">
+            <div class="div">
+                <div class="list">
+                    <div class="item">Sobre o Sesc</div>
+                    <div class="item">Credencial Sesc</div>
+                    <div class="item">Licitações</div>
+                    <div class="item">Fornecedores</div>
+                    <div class="item">Editais</div>
+                    <div class="item">Fale Conosco</div>
+                    <div class="item">Trabalhe Conosco</div>
+                    <div class="item">Transparência e Prestação de Contas</div>
+                </div>
+                <div class="item" id="login">
+                    <img src="/img/profile.svg">
+                    <p>Meu Sesc</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mid_nav">
+        <div class="container">
+            <div class="left">
+                <img class="link" src="/img/logo-sesc.svg" />
+                <div class="divider">|</div>
+                <div class="location">Paraná</div>
+            </div>
+
+            <div class="right">
+                <div class="search">
+                    <div class="txt">Procurar no Sesc Paraná</div>
+                    <img src="/img/search.svg">
+                </div>
+
+                <div class="select-city">
+                    <span>Selecione uma cidade</span>
+                    <img src="/img/arrow.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blue_nav">
+        <div class="container">
+            <div class="list">
+                <div class="item">Unidades</div>
+                <div class="item">Ação Social</div>
+                <div class="item">Cultura</div>
+                <div class="item">Educação</div>
+                <div class="item">Esporte e Lazer</div>
+                <div class="item">Saúde e Alimentação</div>
+                <div class="item">Turismo</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lol">
+        <div class="bot_nav">
+            <div class="container">
+                <div class="heading-wrapper">
+                    <div class="heading">
+                        <div class="link">
+                            <div class="text-wrapper">Turismo</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="item">
+                        <div class="div">
+                            <div class="background"></div>
+                            <div class="text-wrapper-2">Excursões</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="div">
+                            <div class="background"></div>
+                            <div class="text-wrapper-2">Hotéis Sesc no Brasil</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="div">
+                            <div class="background"></div>
+                            <div class="text-wrapper-2">Hotéis Cadastrados</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="div">
+                            <div class="background"></div>
+                            <div class="text-wrapper-2">Regulamento</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="filter">
+                <div class="searchbar">
+                    <input type="text" placeholder="Digite algo para buscar..." />
+                </div>
+                <form method="get" action="/turismo">
+                    <div class="filters">
+                        <div class="filter-item">
+                            <div class="filter-header">Datas</div>
+                            <div class="filter-content">
+                                <label>Selecione um período</label>
+                                <div class="date-range">
+                                    <input type="date" id="start-date">
+                                    <span>até</span>
+                                    <input type="date" id="end-date">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-item">
+                            <div class="filter-header">Cidade de origem</div>
+                            <div class="filter-content">
+                                <input type="text" placeholder="Digite a cidade..." />
+                            </div>
+                        </div>
+
+                        <div class="filter-item">
+                            <div class="filter-header">Valor máximo</div>
+                            <div class="filter-content">
+                                <input type="number" placeholder="Ex: 500" id="max-cost" /> R$
+                            </div>
+                        </div>
+
+                        <div class="filter-item">
+                            <div class="filter-header">Ordenar por</div>
+                            <div class="filter-content">
+                                <select id="sort-by">
+                                    <option>Preço</option>
+                                    <option>Data</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="filter-item">
+                            <div class="filter-header">Tipo de Excursão</div>
+                            <div class="filter-content">
+                                $foreach(tag in Tags)
+                                <label><input type="checkbox" name="tag" value="${tag}"> ${tag}</label><br>
+                                $endfor
+                            </div>
+                        </div>
+
+                        <div class="filter-item">
+                            <div class="filter-header">Destino</div>
+                            <div class="filter-content">
+                                <input type="text" placeholder="Digite o destino..." />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="excursions">
+                <div class="head">
+                    <p>Excursões e passeios</p>
+                    <p><strong id="count"></strong> excursões encontradas.</p>
+                </div>
+
+                <ul class="cards" id="cards">
+                </ul>
+
+
+                <div class="see-more">
+                    <div class="separator"></div>
+                    <div class="link-wrapper">
+                        <div class="link">
+                            <div class="text-wrapper">Veja Mais</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="offers">
+            <div class="head">
+                <h2>Destaques</h2>
+            </div>
+
+            <div class="content">
+                <div class="body">
+                    <div class="cards">
+                        $foreach(tour in Offers)
+                        <div class="card">
+                            <a href="/turismo/tour?id=${tour.id}" class="no-underline">
+                                <img src="${tour.img}" alt="${tour.name}">
+                                <div class="card-content">
+                                    <p>${tour.name}</p>
+                                </div>
+                            </a>
+                        </div>
+                        $endfor
+                    </div>
+                </div>
+
+                <div class="choose">
+                    <div class="head">
+                        <p>Mais sobre <strong>Turismo</strong> no Sesc Paraná:</p>
+                    </div>
+                    <div class="buttons">
+                        <button>Réveillon 2026</button>
+                        <button>Viaja+ Família</button>
+                        <button>Viaje pelo Paraná</button>
+                        <button>+ Turismo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="info">
+                <div class="content">
+                    <div class="info-top">
+                        <div class="left">
+                            <div class="choose-city">Selecione uma cidade</div>
+                            <div class="socials">
+                                <div class="facebook">&#xf09a;</div>
+                                <div class="instagram">&#xf16d;</div>
+                                <div class="youtube">&#xf167;</div>
+                                <div class="twitter">&#xf099;</div>
+                            </div>
+                            <div class="markets">
+                                <div class="google-play">&#xf3ab; Google Play</div>
+                                <div class="app-store">&#xf179; App Store</div>
+                            </div>
+                            <div class="defender"></div>
+                        </div>
+                        <div class="right">
+                            <div>Unidades</div>
+                            <div>Programação</div>
+                            <div>Cursos</div>
+                            <div>Turismo</div>
+                            <div>Serviços</div>
+                            <div>Notícias</div>
+                            <div>Fale Conosco</div>
+                            <div>Ouvidoria</div>
+                            <div>Acesso à informação</div>
+                            <div>Editais</div>
+                            <div>Bolsas Gratuitas</div>
+                            <div>Credencial Sesc</div>
+                            <div>Licitações</div>
+                            <div>Página Inicial</div>
+                            <div>Sobre o Sesc</div>
+                            <div>Trabalhe Conosco</div>
+                            <div>Política de privacidade</div>
+                            <div>Direitos e deveres</div>
+                            <div>Transparência e Prestação de Contas</div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        Entre em contato с Sesc: 41 3304-2266 - 2ª a 6ª, das 8h às 18h
+                    </div>
+                </div>
+            </div>
+
+            <div class="commercials">
+                <p class="title">
+                    Serviço Social do Comércio - Sesc<br />
+                    <span class="subtitle">Departamento Regional no Paraná</span>
+                </p>
+                <p class="address">Rua Visconde do Rio Branco, 931 - CEP 80.410-001 - Curitiba - PR</p>
+                <img class="separator" src="img/margin.svg" alt="">
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="/mainpage/js/filter.js"></script>
+    <script src="/mainpage/js/login.js"></script>
+</body>
+
+</html>

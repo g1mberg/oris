@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "jlR368M4kXs=",
+  "success": true,
+  "projectFilePath": "C:\\kfu\\oris\\HW\\oris\\semestryworks\\SW1\\back\\HttpServer\\MiniTemplateEngine\\MiniTemplateEngine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\муха\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.9\\microsoft.netcore.app.ref.9.0.9.nupkg.sha512",
+    "C:\\Users\\муха\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.9\\microsoft.windowsdesktop.app.ref.9.0.9.nupkg.sha512",
+    "C:\\Users\\муха\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.9\\microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

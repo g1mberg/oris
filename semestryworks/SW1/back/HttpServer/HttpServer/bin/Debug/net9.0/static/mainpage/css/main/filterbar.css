@@ -1,0 +1,115 @@
+﻿.main .filter {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 25%;
+  max-width: 338px;
+  padding: 0 1rem;
+  font-family: "Mulish", sans-serif;
+}
+
+.searchbar input {
+  width: 100%;
+  height: 56px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-item {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-top: none;
+  cursor: pointer;
+}
+
+.filter-item:first-child {
+  border-top: 1px solid #dee2e6;
+  border-radius: 8px 8px 0 0;
+}
+
+.filter-item:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.filter-header {
+  height: 56px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.filter-header::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('/img/arrow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s;
+}
+
+.filter-item.active .filter-header::after {
+  transform: rotate(180deg);
+}
+
+/* содержимое (изначально скрыто) */
+.filter-content {
+  display: none;
+  padding: 12px 20px;
+  border-top: 1px solid #dee2e6;
+  background: #fafafa;
+}
+
+.filter-item.active .filter-content {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.date-range input {
+  flex: 1 1 0;
+  /* позволяет полям делить доступное пространство */
+  min-width: 0;
+  /* критично для ограничения ширины внутри flex */
+  padding: 8px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.date-range span {
+  font-size: 14px;
+  color: #666;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

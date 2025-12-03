@@ -1,0 +1,68 @@
+﻿.tour-prices {
+    box-sizing: border-box;
+    width: 100%;
+    /* max-width: 1480px; */
+    margin: 0 auto;
+    background-color: #027e3f;
+    padding: 24px 16px;
+    color: #fff;
+    font-family: "Mulish", Helvetica, sans-serif;
+}
+
+.tour-prices .list {
+    display: flex;
+    justify-content: center;
+}
+
+.tour-prices-header h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+
+.tour-price {
+    flex: 1 0 0%;
+    max-width: 30rem;
+    background-color: #fff;
+    color: #027e3f;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.tour-price-type {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.tour-price-installment {
+    display: flex;
+    align-items: baseline;
+    font-size: 28px;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.tour-price-installment .installments {
+    font-weight: 200;
+}
+
+.tour-price-installment .currency,
+.tour-price-installment .amount,
+.tour-price-installment .cents {
+    font-weight: 700;
+}
+
+.tour-price-single {
+    font-size: 16px;
+    font-weight: 200;
+    text-align: center;
+}

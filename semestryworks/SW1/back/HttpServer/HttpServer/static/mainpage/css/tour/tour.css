@@ -1,0 +1,143 @@
+﻿.tour {
+  max-width: 1480px;
+  width: 100%;
+  margin: 1rem auto;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: "Mulish", sans-serif;
+}
+
+.tour-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.tour-image {
+  position: relative;
+  width: 469px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tour-image img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.tour-image .badge {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background-color: #027e3f;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tour-text {
+  flex: 1;
+}
+
+.tour-header .title {
+  font-size: 28px;
+  color: #004c99;
+  margin: 0 0 8px 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.tags span {
+  font-size: 14px;
+  color: #004c99;
+  text-decoration: underline;
+}
+
+.date-info span {
+  display: block;
+  font-size: 16px;
+  color: #212529;
+}
+
+.tour-body p {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #212529;
+}
+
+.more-info {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.more-info .link {
+  color: #004c99;
+  text-decoration: underline;
+}
+
+.offer p {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.offer .regulation {
+  color: #004c99;
+  text-decoration: underline;
+}
+
+.edit-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  background: #ff9800;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 9999;
+}
+
+.save-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 150px;
+  background: white;
+  padding: 12px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+}
+
+.save-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.cancel-btn {
+  background: #f44336;
+  color: white;
+}

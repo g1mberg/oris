@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/mainpage/css/head/blue_nav.css" />
+    <link rel="stylesheet" href="/mainpage/css/head/bot_nav.css" />
+    <link rel="stylesheet" href="/mainpage/css/head/mid_nav.css" />
+    <link rel="stylesheet" href="/mainpage/css/head/nav.css" />
+    <link rel="stylesheet" href="/mainpage/css/style.css" />
+    <link rel="stylesheet" href="/mainpage/css/bottom/info.css" />
+    <link rel="stylesheet" href="/mainpage/css/bottom/commercials.css" />
+    <link rel="stylesheet" href="/mainpage/css/tour/tour.css" />
+    <link rel="stylesheet" href="/mainpage/css/tour/tour-price.css" />
+    <link rel="stylesheet" href="/mainpage/css/tour/request.css" />
+    <link rel="stylesheet" href="/mainpage/css/tour/payment.css" />
+</head>
+
+<body>
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" data-close="loginModal">&times;</span>
+            <h3>Вход</h3>
+            <input type="text" id="loginUsername" placeholder="Логин">
+            <input type="password" id="loginPassword" placeholder="Пароль">
+            <button id="loginSubmit">Войти</button>
+
+            <p>Нет аккаунта? <button id="toRegister">Зарегистрироваться</button></p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" data-close="registerModal">&times;</span>
+            <h3>Регистрация</h3>
+            <input type="text" id="regUsername" placeholder="Логин">
+            <input type="password" id="regPassword" placeholder="Пароль">
+            <button id="registerSubmit">Создать аккаунт</button>
+
+            <p>Уже есть аккаунт? <button id="toLogin">Войти</button></p>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="container">
+            <div class="div">
+                <div class="list">
+                    <div class="item">Sobre o Sesc</div>
+                    <div class="item">Credencial Sesc</div>
+                    <div class="item">Licitações</div>
+                    <div class="item">Fornecedores</div>
+                    <div class="item">Editais</div>
+                    <div class="item">Fale Conosco</div>
+                    <div class="item">Trabalhe Conosco</div>
+                    <div class="item">Transparência e Prestação de Contas</div>
+                </div>
+                <div class="item" id="login">
+                    <img src="/img/profile.svg">
+                    <p>Meu Sesc</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mid_nav">
+        <div class="container">
+            <div class="left">
+                <img class="link" src="/img/logo-sesc.svg" />
+                <div class="divider">|</div>
+                <div class="location">Paraná</div>
+            </div>
+
+            <div class="right">
+                <div class="search">
+                    <div class="txt">Procurar no Sesc Paraná</div>
+                    <img src="/img/search.svg">
+                </div>
+
+                <div class="select-city">
+                    <span>Selecione uma cidade</span>
+                    <img src="/img/arrow.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blue_nav">
+        <div class="container">
+            <div class="list">
+                <div class="item">Unidades</div>
+                <div class="item">Ação Social</div>
+                <div class="item">Cultura</div>
+                <div class="item">Educação</div>
+                <div class="item">Esporte e Lazer</div>
+                <div class="item">Saúde e Alimentação</div>
+                <div class="item">Turismo</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lol">
+        <div class="bot_nav">
+            <div class="container">
+                <div class="heading-wrapper">
+                    <div class="heading">
+                        <div class="link">
+                            <a href="/turismo" class="no-underline">
+                                <div class="text-wrapper">Turismo</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="item">
+                        <div class="div">
+                            <div class="background"></div>
+                            <div class="text-wrapper-2">Excursões</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="div">
+                            <div class="background"></div>
+                            <div class="text-wrapper-2">Hotéis Sesc no Brasil</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="div">
+                            <div class="background"></div>
+                            <div class="text-wrapper-2">Hotéis Cadastrados</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="div">
+                            <div class="background"></div>
+                            <div class="text-wrapper-2">Regulamento</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tour">
+            <div class="tour-content">
+                <div class="tour-image">
+                    <img src=${Tour.img} alt="Passeio de Trem">
+                    <span class="badge">${Tour.status}</span>
+                </div>
+
+                <div class="tour-text">
+                    <div class="tour-header">
+                        <h2 class="title">${Tour.name}</h2>
+                        <div class="tags">
+                            <span>Feriados</span>
+                            <span>Histórico cultural</span>
+                            <span>Lazer</span>
+                            <span>Passeio</span>
+                            <span>Viaja+ Família</span>
+                            <span>Viaje pelo Paraná!</span>
+                        </div>
+                        <div class="date-info">
+                            <span class="date">Dia 15 de novembro de 2025</span>
+                            <span class="departure">Saída de Curitiba</span>
+                        </div>
+                    </div>
+
+                    <div class="tour-body">
+                        <p>Morretes é uma charmosa cidade entre a Serra e o Litoral do Paraná, repleta de casarões
+                            preservados e restaurantes, que têm o barreado como prato típico. É ideal também para quem
+                            quer descansar e ir ao encontro do verde das montanhas, do ar puro.</p>
+
+                        <p>Antonina possui uma vegetação exuberante de uma cidade pacata, hospitaleira e histórica. Além
+                            da extraordinária beleza natural paisagística, Antonina possui, no calçamento de pedras e
+                            nas ruínas, histórias que enriquecem o seu patrimônio.</p>
+
+                        <div class="more-info">
+                            <span>Para mais informações,</span>
+                            <a href="#" class="link">clique aqui</a>
+                        </div>
+
+                        <div class="offer">
+                            <p>ROTEIRO PARTICIPANTE DA AÇÃO VIAJA+ FAMÍLIA: 50% de desconto para dependentes de
+                                Trabalhador do Comércio de 0 a 12 anos em roteiros aéreos. Informe o cupom CRIANÇA50 no
+                                momento da inscrição.</p>
+                            <a href="#" class="regulation">Consulte o regulamento completo aqui.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tour-prices">
+            <div class="tour-prices-header">
+                <h2>VALORES</h2>
+            </div>
+
+            <div class="list">
+                <div class="tour-price">
+                    <div class="tour-price-type">Trabalhador do Comércio</div>
+                    <div class="tour-price-installment">
+                        <span class="installments">6x</span>
+                        <span class="currency">R$</span>
+                        <span class="amount">53</span>
+                        <span class="cents">,00</span>
+                    </div>
+                    <div class="tour-price-single">
+                        ou 1x R$ 318,00 /pessoa
+                    </div>
+                </div>
+
+                <div class="tour-price">
+                    <div class="tour-price-type">Público em Geral</div>
+                    <div class="tour-price-installment">
+                        <span class="installments">6x</span>
+                        <span class="currency">R$</span>
+                        <span class="amount">59</span>
+                        <span class="cents">,00</span>
+                    </div>
+                    <div class="tour-price-single">
+                        ou 1x R$ 354,00 /pessoa
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="request">
+            <div class="request-header">
+                <div class="title">Excursão Confirmada</div>
+
+                <div class="request-info">
+                    <p class="subtitle">Ficou interessado nesta excursão/passeio?</p>
+                    <p class="description">
+                        Deixe seus contatos para que possamos te informar quando ela for confirmada!
+                    </p>
+                    <p class="important">
+                        Importante: O preenchimento destas informações não serve como reserva e não garante sua
+                        vaga. A vaga será garantida somente após a efetivação de sua inscrição em uma das Unidades
+                        Sesc Paraná.
+                    </p>
+                </div>
+            </div>
+
+
+            <form class="request-form">
+                <input type="text" placeholder="Nome">
+                <div class="form-row">
+                    <input type="email" placeholder="E-mail">
+                    <input type="tel" placeholder="Telefone">
+                    <input type="number" min="1" placeholder="Quantidade de Pessoas">
+                </div>
+                <button type="submit" class="submit-button">Enviar</button>
+            </form>
+
+        </div>
+
+        <div class="payment-section">
+            <h3 class="title">Forma de Pagamento</h3>
+            <p class="text">
+                Parcelamento em até 12 vezes, sem juros, nos cartões Visa, Redeshop, Maestro, Mastercard, Diners,
+                American Express, Elo. Parcela mínima de R$ 50,00 (cinquenta reais).
+            </p>
+
+            <hr class="separator">
+
+            <h3 class="title">Procedimentos para Inscrições</h3>
+            <p class="text">
+                As vagas são disponibilizadas preferencialmente aos trabalhadores do comércio de bens, serviços e
+                turismo, empresários e seus dependentes; Público em geral poderá se inscrever também
+                havendo vagas, o que permite a participação de parentes, amigos e colegas dos trabalhadores do comércio,
+                possibilitando maior integração e troca de experiência entre os participantes,
+                promovendo junto à visita a novos lugares e realidades, um enriquecimento cultural, parte do objetivo do
+                Turismo Social.
+            </p>
+            <p class="text">As pré-reservas terão validade máxima de 02 dias para pagamento.</p>
+
+            <h4 class="subtitle">Para o pagamento apresentar documentos:</h4>
+            <ul class="document-list">
+                <li>Adultos: RG – Carteira de Identidade</li>
+                <li>Crianças até 11 anos: Certidão de Nascimento</li>
+                <li>Crianças a partir de 12 anos: RG – Carteira de Identidade</li>
+                <li>CPF</li>
+                <li>Credencial Sesc atualizada (carteirinha)</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <!-- Верхний текст -->
+            <p class="text-wrapper">Inscrições na unidade Sesc mais próxima de você!</p>
+
+            <!-- Список кнопок -->
+            <div class="buttons-list">
+                <div class="heading-button">Sesc Água Verde</div>
+                <div class="heading-button">Sesc Centro</div>
+                <div class="heading-button">Sesc da Esquina</div>
+                <div class="heading-button">Sesc Educação Infantil</div>
+                <div class="heading-button">Sesc Paço da Liberdade</div>
+                <div class="heading-button">Sesc Portão</div>
+            </div>
+
+            <!-- Нижний текст с ссылкой -->
+            <div class="footer-text">
+                <p>Consulte todas as Unidades Sesc em:</p>
+                <a href="https://www.sescpr.com.br/unidades" class="text-wrapper-4">
+                    https://www.sescpr.com.br/unidades
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <!-- Кнопка "Voltar" -->
+                <button class="voltar-button">Voltar</button>
+
+                <!-- Блок "Compartilhe" с соц. кнопками -->
+                <div class="share">
+                    <span class="share-text">Compartilhe:</span>
+                    <div class="share-buttons">
+                        <a href="#" class="share-item facebook">F</a>
+                        <a href="#" class="share-item whatsapp">W</a>
+                        <a href="#" class="share-item twitter">T</a>
+                        <button class="share-item link">🔗</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom">
+            <div class="info">
+                <div class="content">
+                    <div class="info-top">
+                        <div class="left">
+                            <div class="choose-city">Selecione uma cidade</div>
+                            <div class="socials">
+                                <div class="facebook">&#xf09a;</div>
+                                <div class="instagram">&#xf16d;</div>
+                                <div class="youtube">&#xf167;</div>
+                                <div class="twitter">&#xf099;</div>
+                            </div>
+                            <div class="markets">
+                                <div class="google-play">&#xf3ab; Google Play</div>
+                                <div class="app-store">&#xf179; App Store</div>
+                            </div>
+                            <div class="defender"></div>
+                        </div>
+                        <div class="right">
+                            <div>Unidades</div>
+                            <div>Programação</div>
+                            <div>Cursos</div>
+                            <div>Turismo</div>
+                            <div>Serviços</div>
+                            <div>Notícias</div>
+                            <div>Fale Conosco</div>
+                            <div>Ouvidoria</div>
+                            <div>Acesso à informação</div>
+                            <div>Editais</div>
+                            <div>Bolsas Gratuitas</div>
+                            <div>Credencial Sesc</div>
+                            <div>Licitações</div>
+                            <div>Página Inicial</div>
+                            <div>Sobre o Sesc</div>
+                            <div>Trabalhe Conosco</div>
+                            <div>Política de privacidade</div>
+                            <div>Direitos e deveres</div>
+                            <div>Transparência e Prestação de Contas</div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        Entre em contato с Sesc: 41 3304-2266 - 2ª a 6ª, das 8h às 18h
+                    </div>
+                </div>
+            </div>
+
+            <div class="commercials">
+                <p class="title">
+                    Serviço Social do Comércio - Sesc<br />
+                    <span class="subtitle">Departamento Regional no Paraná</span>
+                </p>
+                <p class="address">Rua Visconde do Rio Branco, 931 - CEP 80.410-001 - Curitiba - PR</p>
+                <img class="separator" src="img/margin.svg" alt="">
+            </div>
+
+        </div>
+    </div>
+    $if(IsAdmin)
+    <button id="editTourBtn" class="edit-btn" data-tour-id="${Tour.id}">Редактировать</button>
+    <script src="/mainpage/js/change.js"></script>
+    $endif
+
+    <script src="/mainpage/js/login.js"></script>
+</body>
+
+</html>

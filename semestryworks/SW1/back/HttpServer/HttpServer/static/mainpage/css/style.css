@@ -1,0 +1,203 @@
+﻿.container,
+.div-wrapper,
+.div-wrapper-2,
+.div-wrapper-3,
+.mid_nav .div {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1480px;
+}
+
+
+.main {
+    max-width: 1480px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+}
+
+.lol {
+    background-color: rgba(243,243,242,1);
+}
+
+/* Контейнер */
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1480px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: "Mulish", Helvetica, sans-serif;
+}
+
+/* Верхний текст */
+.text-wrapper {
+  font-size: 24px;
+  font-weight: 200;
+  color: #004c99;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Список кнопок */
+.buttons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* расстояние между кнопками */
+  margin-bottom: 24px;
+}
+
+/* Каждая кнопка */
+.heading-button {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 200;
+  color: #212529;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.heading-button:hover {
+  background-color: #f0f0f0;
+  border-color: #bcbcbc;
+}
+
+/* Нижний текст и ссылка */
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 100;
+  color: #212529;
+}
+
+.footer-text a {
+  color: #004c99;
+  text-decoration: underline;
+}
+
+.footer {
+  width: 100%;
+  border-top: 1px solid #dee2e6;
+  padding: 25px 16px;
+  box-sizing: border-box;
+  font-family: "Mulish", Helvetica, sans-serif;
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1480px;
+  margin: 0 auto;
+  flex-wrap: nowrap; /* Всё в одну строку */
+}
+
+
+/* Кнопка "Voltar" */
+.voltar-button {
+  padding: 12px 24px;
+  background-color: #ffffff;
+  border: 1px solid #027ac7;
+  border-radius: 160px;
+  color: #027ac7;
+  font-weight: 200;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.voltar-button:hover {
+  background-color: #f0f8ff;
+}
+
+/* Блок "Compartilhe" */
+.share {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.share-text {
+  font-weight: 100;
+  font-size: 16px;
+  color: #212529;
+}
+
+/* Кнопки соц. сетей */
+.share-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.share-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 24px;
+  color: #4c4c4a;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.share-item:hover {
+  background-color: #f0f0f0;
+}
+
+.hidden { display: none !important; }
+
+/* Фон модала */
+.modal {
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background: rgba(0, 0, 0, 0.5); /* полупрозрачный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* выше любых элементов страницы */
+}
+
+/* Контент модала */
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 300px;
+    max-width: 90%;
+    position: relative;
+    z-index: 10001; /* выше фона */
+}
+
+/* Крестик закрытия */
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Индивидуальные цвета соц. сетей (по желанию) */
+.share-item.facebook { color: #3b5998; }
+.share-item.whatsapp { color: #25d366; }
+.share-item.twitter { color: #1da1f2; }
+.share-item.link { color: #4c4c4a; }
+
