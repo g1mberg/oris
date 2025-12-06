@@ -1,0 +1,15 @@
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\bin\Debug\net10.0\Protocol.exe
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\bin\Debug\net10.0\Protocol.deps.json
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\bin\Debug\net10.0\Protocol.runtimeconfig.json
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\bin\Debug\net10.0\Protocol.dll
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\bin\Debug\net10.0\Protocol.pdb
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\obj\Debug\net10.0\Protocol.GeneratedMSBuildEditorConfig.editorconfig
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\obj\Debug\net10.0\Protocol.AssemblyInfoInputs.cache
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\obj\Debug\net10.0\Protocol.AssemblyInfo.cs
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\obj\Debug\net10.0\Protocol.csproj.CoreCompileInputs.cache
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\obj\Debug\net10.0\Protocol.sourcelink.json
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\obj\Debug\net10.0\Protocol.dll
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\obj\Debug\net10.0\refint\Protocol.dll
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\obj\Debug\net10.0\Protocol.pdb
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\obj\Debug\net10.0\Protocol.genruntimeconfig.cache
+C:\kfu\oris\HW\oris\HWs\HW12\Protocol\Protocol\obj\Debug\net10.0\ref\Protocol.dll

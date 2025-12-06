@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protocol", "Protocol\Protocol.csproj", "{AB62404A-6950-48ED-9EDF-C28E3BBEB12A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPCLlient", "TCPCLlient\TCPCLlient.csproj", "{D18646DE-42A9-48A0-A9A3-459496FE6ECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPServer", "TCPServer\TCPServer.csproj", "{D4DAB09D-E165-49DC-B0DC-919DFF3E1CA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB62404A-6950-48ED-9EDF-C28E3BBEB12A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB62404A-6950-48ED-9EDF-C28E3BBEB12A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB62404A-6950-48ED-9EDF-C28E3BBEB12A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB62404A-6950-48ED-9EDF-C28E3BBEB12A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D18646DE-42A9-48A0-A9A3-459496FE6ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D18646DE-42A9-48A0-A9A3-459496FE6ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D18646DE-42A9-48A0-A9A3-459496FE6ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D18646DE-42A9-48A0-A9A3-459496FE6ECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4DAB09D-E165-49DC-B0DC-919DFF3E1CA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4DAB09D-E165-49DC-B0DC-919DFF3E1CA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4DAB09D-E165-49DC-B0DC-919DFF3E1CA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4DAB09D-E165-49DC-B0DC-919DFF3E1CA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
