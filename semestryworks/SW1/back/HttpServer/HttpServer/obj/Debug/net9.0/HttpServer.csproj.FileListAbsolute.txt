@@ -1,4 +1,4 @@
-﻿C:\Users\adk03\Downloads\ConsoleApp1\HttpServer\bin\Debug\net9.0\Program.cs
+C:\Users\adk03\Downloads\ConsoleApp1\HttpServer\bin\Debug\net9.0\Program.cs
 C:\Users\adk03\Downloads\ConsoleApp1\HttpServer\bin\Debug\net9.0\HttpServer.exe
 C:\Users\adk03\Downloads\ConsoleApp1\HttpServer\bin\Debug\net9.0\settings.json
 C:\Users\adk03\Downloads\ConsoleApp1\HttpServer\bin\Debug\net9.0\static\image\bg.jpg
@@ -593,3 +593,4 @@ C:\kfu\oris\HW\oris\semestryworks\SW1\back\HttpServer\HttpServer\bin\Debug\net9.
 C:\kfu\oris\HW\oris\semestryworks\SW1\back\HttpServer\HttpServer\bin\Debug\net9.0\static\mainpage\js\filter.js
 C:\kfu\oris\HW\oris\semestryworks\SW1\back\HttpServer\HttpServer\bin\Debug\net9.0\static\mainpage\js\login.js
 C:\kfu\oris\HW\oris\semestryworks\SW1\back\HttpServer\HttpServer\bin\Debug\net9.0\static\mainpage\js\change.js
+C:\kfu\oris\HW\oris\semestryworks\SW1\back\HttpServer\HttpServer\bin\Debug\net9.0\static\404.html

@@ -33,27 +33,33 @@ public sealed class HttpServer
         {
             _listener.BeginGetContext(ListenerCallback, _listener);
         }
-        catch (ObjectDisposedException)
+        catch (Exception e)
         {
-        }
-        catch (HttpListenerException)
-        {
+            Console.WriteLine(e);
         }
     }
 
     private void ListenerCallback(IAsyncResult result)
     {
-        if (!_listener.IsListening) return;
+        try
+        {
+            if (!_listener.IsListening) return;
         
-        var context = _listener.EndGetContext(result);
+            var context = _listener.EndGetContext(result);
         
-        Handler staticFilesHandler = new StaticFilesHandler();
-        Handler endpointsHandler = new EndpointsHandler();
+            Handler staticFilesHandler = new StaticFilesHandler();
+            Handler endpointsHandler = new EndpointsHandler();
         
-        staticFilesHandler.Successor = endpointsHandler;
-        staticFilesHandler.HandleRequest(context);
+            staticFilesHandler.Successor = endpointsHandler;
+            staticFilesHandler.HandleRequest(context);
 
-        if (_listener.IsListening) Receive();
+            if (_listener.IsListening) Receive();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
     public static void SendStaticResponse(HttpListenerContext context, HttpStatusCode statusCode, string path)

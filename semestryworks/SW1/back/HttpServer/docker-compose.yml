@@ -1,0 +1,29 @@
+﻿services:
+  db:
+    image: postgres:16
+    container_name: httpserver_db
+    environment:
+      POSTGRES_DB: httpserver
+      POSTGRES_USER: httpserver
+      POSTGRES_PASSWORD: httpserver
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: httpserver_app
+    depends_on:
+      - db
+    environment:
+      APP_ENV: Docker
+      ASPNETCORE_URLS: http://0.0.0.0:1234
+      CONNECTION_STRING: Host=db;Port=5432;Database=httpserver;Username=httpserver;Password=httpserver
+    ports:
+      - "1234:1234"
+
+volumes:
+  db_data:

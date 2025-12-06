@@ -1,8 +1,15 @@
-﻿namespace HttpServer.Models;
+﻿using MyORM;
+
+namespace HttpServer.Models;
 
 public class Session
 {
-    public int id { get; set; }
-    public int userId { get; set; }
-    public DateTime expiresAt { get; set; }
+    [PrimaryKey]
+    public int Id { get; set; }
+    
+    [Column("userid")]
+    public int UserId { get; set; }
+    
+    [Column("expiresAt")]
+    public DateTime ExpiresAt { get; set; }
 }

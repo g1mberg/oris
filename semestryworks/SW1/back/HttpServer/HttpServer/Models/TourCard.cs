@@ -1,37 +1,64 @@
 ﻿using System.Text.Json;
+using MyORM;
 using static HttpServer.Framework.Utils.DateNaming;
 
 namespace HttpServer.Models;
 
 public class TourCard
 {
-    public int id { get; set; }
-    public string? name { get; set; }
-    public string? dateStart{ get; set; }
-    public string? dateEnd { get; set; }
-    public string? from { get; set; }
-    public string? status { get; set; }
+    [PrimaryKey]
+    public int Id { get; set; }
 
-    public decimal cost { get; set; }
+    [Column("name")]
+    public string? Name { get; set; }
 
-    public string? img { get; set; }
-    public string? tags{ get; set; }
+    [Column("datestart")]
+    public DateTime DateStart { get; set; }
+
+    [Column("dateend")]
+    public DateTime DateEnd { get; set; }
+
+    [Column("origin")]
+    public string? From { get; set; }
+
+    [Column("status")]
+    public string? Status { get; set; }
+
+    [Column("cost")]
+    public decimal Cost { get; set; }
+
+    [Column("img")]
+    public string? Img { get; set; }
+
+    [Column("tags")]
+    public string? Tags { get; set; }
     
-    public List<string> searilezedTags => tags != null ? JsonSerializer.Deserialize<List<string>>(tags) : [];
-    public DateTimeOffset? searilezedDateStart => DateTimeOffset.Parse(dateStart);
+    [Column("destination")]
+    public string? Destination { get; set; }
 
-    private string suka => dateStart[..5].Equals(dateEnd[..5])
-        ? "Dia " + GetPortDate(dateStart)
-        : "De " + GetPortDate(dateStart) + " a " + GetPortDate(dateEnd); 
-    public string html => $"<li class=\"card\">" +
-                                $"<a href=\"/turismo/tour?id={id}\" class=\"no-underline\">" +
-                                    $"<img src=\"{img}\" alt=\"Imagem 1\">" +
-                                    $"<div class=\"card-content\">" +
-                                        $"<h3>{name}</h3>" +
-                                        $"<p>{suka} de {dateStart[6..10]}\n<br>Saída de <strong>{from}</strong></p>" +
-                                        $"<p>A partir de 12x <strong>R$ {cost}/pessoa</strong></p>" +
-                                    $"</div>" +
-                                $"</a>" +
-                            $"</li>";
+    public List<string>? searilezedTags => Tags != null ? JsonSerializer.Deserialize<List<string>>(Tags) : [];
+
+    private string PortDate => DateStart.DayOfYear.Equals(DateEnd.DayOfYear)
+        ? "Dia " + GetPortDate(DateStart)
+        : "De " + GetPortDate(DateStart) + " a " + GetPortDate(DateEnd); 
+
+    public string Html => $"<li class=\"card\">" +
+                          $"<a href=\"/turismo/tour?id={Id}\" class=\"no-underline\">" +
+                          $"<img src=\"{Img}\" alt=\"Imagem 1\">" +
+                          $"<div class=\"card-content\">" +
+                          $"<h3>{Name}</h3>" +
+                          $"<p>{PortDate} de {DateStart.Year}\n<br>Saída de <strong>{From}</strong></p>" +
+                          $"<p>A partir de 12x <strong>R$ {Cost}/pessoa</strong></p>" +
+                          $"</div>" +
+                          $"</a>" +
+                          $"</li>";
     
+    public static void ReadJson(string json, TourCard? tour)
+    {
+        using var doc = JsonDocument.Parse(json);
+        var root = doc.RootElement;
+        
+        root.TryGetProperty(".tour-header .title", out var res);
+        tour.Name = res[0].GetString();
+    }
 }

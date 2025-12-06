@@ -1,18 +1,21 @@
-﻿using HttpServer.Framework.Utils;
+﻿using MyORM;
 
 namespace HttpServer.Models;
 
-
-
 public class User
 {
-    public int id { get; set; }
+    [PrimaryKey]
+    public int Id { get; set; }
     
-    public string login { get; set; }
+    [Column("login")]
+    public string? Login { get; set; }
     
-    public byte[] password { get; set; }
+    [Column("password")]
+    public byte[]? Password { get; set; }
     
-    public byte[] salt { get; set; }
+    [Column("salt")]
+    public byte[]? Salt { get; set; }
     
-    public bool isadmin { get; set; }
+    [Column("isadmin")]
+    public bool IsAdmin { get; set; }
 }

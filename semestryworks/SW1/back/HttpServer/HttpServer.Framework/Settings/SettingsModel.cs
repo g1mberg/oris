@@ -8,7 +8,7 @@ public class SettingsModel
     public string? Domain { get; init; }
     public string? Port { get; init; }
 
-    public string? ConnectionString { get; init; }
+    public string? ConnectionString { get; set; }
 
     public static SettingsModel ReadJSON(string path)
     {

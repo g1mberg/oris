@@ -102,6 +102,16 @@
   color: #666;
 }
 
+.filter-reset :only-child {
+  width:100%;
+  padding:12px;
+  background:white;
+  border: 1px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px;
+}
+
 @keyframes slideDown {
   from {
     opacity: 0;

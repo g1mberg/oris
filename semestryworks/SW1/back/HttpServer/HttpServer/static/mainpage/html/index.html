@@ -147,8 +147,9 @@
         <div class="main">
             <div class="filter">
                 <div class="searchbar">
-                    <input type="text" placeholder="Digite algo para buscar..." />
+                    <input type="text" id="search-input" name="search" placeholder="Digite algo para buscar..." />
                 </div>
+
                 <form method="get" action="/turismo">
                     <div class="filters">
                         <div class="filter-item">
@@ -156,9 +157,9 @@
                             <div class="filter-content">
                                 <label>Selecione um período</label>
                                 <div class="date-range">
-                                    <input type="date" id="start-date">
+                                    <input type="date" id="start-date" name="startDate" min="">
                                     <span>até</span>
-                                    <input type="date" id="end-date">
+                                    <input type="date" id="end-date" name="endDate" min="">
                                 </div>
                             </div>
                         </div>
@@ -166,7 +167,15 @@
                         <div class="filter-item">
                             <div class="filter-header">Cidade de origem</div>
                             <div class="filter-content">
-                                <input type="text" placeholder="Digite a cidade..." />
+                                <input type="text" id="origin-city" name="originCity" list="origin-cities"
+                                    placeholder="Digite a cidade..." />
+
+                                <datalist id="origin-cities">
+                                    $foreach(city in Origins)
+                                    <option value="${city}">
+                                    $endfor
+                                </datalist>
+
                             </div>
                         </div>
 
@@ -199,11 +208,25 @@
                         <div class="filter-item">
                             <div class="filter-header">Destino</div>
                             <div class="filter-content">
-                                <input type="text" placeholder="Digite o destino..." />
+                                <input type="text" id="destination" name="destination" list="destinations"
+                                    placeholder="Digite o destino..." />
+
+                                <datalist id="destinations">
+                                    $foreach(city in Destinations)
+                                    <option value="${city}">
+                                        $endfor
+                                </datalist>
+
                             </div>
                         </div>
                     </div>
                 </form>
+
+                <div class="filter-reset">
+                    <button type="button" id="reset-filters">
+                        reset
+                    </button>
+                </div>
             </div>
 
 
@@ -241,7 +264,7 @@
                             <a href="/turismo/tour?id=${tour.id}" class="no-underline">
                                 <img src="${tour.img}" alt="${tour.name}">
                                 <div class="card-content">
-                                    <p>${tour.name}</p>
+                                    <h3>${tour.name}</h3>
                                 </div>
                             </a>
                         </div>

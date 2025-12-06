@@ -2,68 +2,72 @@
 using HttpServer.Framework.core.Abstract.HttpResponse;
 using HttpServer.Framework.core.Attributes;
 using HttpServer.Framework.Core.HttpResponse;
-using HttpServer.Framework.Settings;
 using HttpServer.Models;
-using MyORM;
+using HttpServer.Repository;
+using HttpServer.Services;
 
 namespace HttpServer.Endpoints;
 
 [Endpoint]
 internal class TurismoEndpoint : BaseEndpoint
 {
-    private OrmContext orm = new OrmContext(SettingsManager.Instance.Settings.ConnectionString!);
+    private readonly OrmRepository<TourCard> _tourRepo;
+    private readonly SessionService _sessionService;
+
+    public TurismoEndpoint()
+    {
+        _tourRepo = new OrmRepository<TourCard>("tours");
+        var sessionRepo = new OrmRepository<Session>("sessions");
+        var userRepo = new OrmRepository<User>("users");
+        _sessionService = new SessionService(sessionRepo, userRepo);
+    }
 
     [HttpGet("/turismo")]
     public IResponseResult GetMainPage()
     {
-        var random = new Random();
-        var tours = orm.ReadAll<TourCard>("tours");
-
-        var data = new
+        try
         {
-            Tours = tours,
-            Count = tours.Count,
-            Offers = tours.OrderBy(x => random.Next()).Take(3).ToList(),
-            Tags = GetPossibleTags(tours)
-        };
+            var random = new Random();
+            var tours = _tourRepo.GetAll().ToList();
 
-        return Page("/mainpage/html/index.html", data);
+            var data = new
+            {
+                Tours = tours,
+                Offers = tours.OrderBy(_ => random.Next()).Take(3).ToList(),
+                Tags = _tourRepo.GetDistinctValues(tour => tour.searilezedTags ?? []),
+                Destinations = _tourRepo.GetDistinctSingleValues(tour => tour.Destination),
+                Origins = _tourRepo.GetDistinctSingleValues(tour => tour.From),
+            };
+
+            return Page("/mainpage/html/index.html", data);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
     }
 
     [HttpGet("/turismo/tour")]
     public IResponseResult GetTourPage(HttpListenerContext context)
     {
         if (!int.TryParse(context.Request.QueryString["id"], out var id))
-            return GetMainPage();
+            return new NotFoundResult();
 
-        var tour = orm.ReadById<TourCard>(id, "tours");
+        var tour = _tourRepo.GetById(id);
         if (tour == null) return new NotFoundResult();
 
-        var user = GetUserFromSession(context);
-        Console.WriteLine(user?.isadmin);
+        var user = _sessionService.GetUserFromSession(context);
 
         var data = new
         {
             Tour = tour,
-            IsAdmin = user?.isadmin ?? false
+            IsAdmin = user?.IsAdmin ?? false
         };
 
         return Page("/mainpage/html/tour.html", data);
     }
-
-    [HttpGet("/turismo/filter")]
-    public IResponseResult GetFilterPage(HttpListenerContext context)
-    {
-        var tours = GetFilteredTours(context);
-        var data = new
-        {
-            Tours = tours,
-            Count = tours.Count
-        };
-
-        return StringAnswer(@"$foreach(tour in Tours) ${tour.html} $endfor", data);
-    }
-
 
     [HttpPost("/admin/save-tour")]
     public void SaveChanges(HttpListenerContext context)
@@ -72,59 +76,18 @@ internal class TurismoEndpoint : BaseEndpoint
         using var input = request.InputStream;
         using var reader = new StreamReader(input, request.ContentEncoding);
 
-        var tour = TourInfo.ReadJson(reader.ReadToEnd());
-        orm.Update(int.Parse(request.QueryString["id"] ?? string.Empty), tour, "tours");
+        var body = reader.ReadToEnd();
 
-        context.Response.Close();
-    }
-
-    private static List<string> GetPossibleTags(List<TourCard> tours)
-    {
-        var tags = new HashSet<string>();
-
-        foreach (var tag in tours.SelectMany(tour => tour.searilezedTags))
-            tags.Add(tag);
-        var res = tags.ToList();
-        res.Sort();
-        return res;
-    }
-
-    private List<TourCard> GetFilteredTours(HttpListenerContext context)
-    {
-        var tags = context.Request.QueryString["tags"]?.Split(',').ToList();
-        var sortBy = context.Request.QueryString["sort"];
-        if (!decimal.TryParse(context.Request.QueryString["maxCost"], out var maxCost)) maxCost = 9999999;
-        
-        var tours = orm.ReadAll<TourCard>("tours");
-        var possibleTags = GetPossibleTags(tours);
-
-        tours = tours.Where(x => x.cost < maxCost)
-            .Where(x =>
-            {
-                return tags == null ||
-                       tags.All(tag => !possibleTags.Contains(tag) || x.searilezedTags.Contains(tag));
-            }).ToList();
-
-        return sortBy switch
+        if (!int.TryParse(request.QueryString["id"], out var id) || !_tourRepo.TryGetById(id, out var tour))
         {
-            "Data" => tours.OrderBy(x => x.searilezedDateStart).ToList(),
-            _ => tours.OrderBy(x => x.cost).ToList()
-        };
-    }
-
-    public User? GetUserFromSession(HttpListenerContext context)
-    {
-        if (!int.TryParse(context.Request.Cookies["sessionId"]?.Value, out var sessionId))
-            return null;
-        
-        var session = orm.ReadById<Session>(sessionId, "sessions");
-        if (session == null) return null;
-        if (session.expiresAt < DateTime.UtcNow)
-        {
-            orm.Delete(sessionId, "sessions");
-            return null;
+            context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            context.Response.Close();
+            return;
         }
-        var user = orm.ReadById<User>(session.userId, "users");
-        return user;
+        
+        TourCard.ReadJson(body, tour);
+
+        _tourRepo.Update(id, tour!);
+        context.Response.Close();
     }
 }
