@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniTemplateEngine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3be83b3f269e390c84a28f90d22eb95bd2a1ac52")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1108965282cda007b05cea9fe23ba9c4d1fea17")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniTemplateEngine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniTemplateEngine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
